@@ -26,6 +26,32 @@ body::before {
     pointer-events: none;
 }
 
+.new-year {
+    font-size: 3rem; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    color: #fff; /* Белый цвет текста */
+    text-align: center; /* Центрирование текста */
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0099, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 75px #ff0099; /* Эффект сияния */
+    animation: glow 1.5s ease-in-out infinite, snow 10s linear infinite; /* Анимация сияния и снега */
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0099, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 75px #ff0099; }
+    50% { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 60px #ff0099, 0 0 100px #ff0099; }
+    100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0099, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 75px #ff0099; }
+}
+
+@keyframes snow {
+    0% {
+        background: url('https://example.com/snowflakes.png') repeat top center; /* Можно заменить на ссылку с картинкой снежинок */
+        background-size: cover;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+
 .gallery .slide:hover {
     opacity: 0.9;
 }

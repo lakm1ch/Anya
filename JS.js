@@ -59,7 +59,7 @@ function createSnowflakes() {
         return;
     }
 
-    const numberOfSnowflakes = 30; // Количество снежинок на экране
+    const numberOfSnowflakes = 15; // Количество снежинок на экране
 
     for (let i = 0; i < numberOfSnowflakes; i++) {
         const snowflake = document.createElement('div');

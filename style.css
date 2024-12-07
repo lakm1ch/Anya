@@ -19,12 +19,60 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('foto/fon.jpg'); /* Поставь свой фон с картинкой */
+    background-image: url('foto/freepik__candid-image-photography-natural-textures-highly-r__58734.jpeg'); /* Замените на зимний фон */
     background-size: cover;
     background-position: center;
-    opacity: 0.15; /* Легкое затенение */
+    opacity: 0.30; /* Легкое затенение */
     pointer-events: none;
 }
+
+.gallery .slide:hover {
+    opacity: 0.9;
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -50px;  /* Начальная высота снежинки */
+    opacity: 0.9;
+    font-size: 2rem;
+    animation: snowflake 10s linear infinite;
+}
+
+/* Анимация для снежинок, чтобы они падали до самого низа страницы */
+@keyframes snowflake {
+    0% {
+        transform: translateY(0) rotate(0deg);  /* Начало анимации */
+    }
+    100% {
+        transform: translateY(200vh) rotate(360deg); /* Падение до нижней части экрана */
+    }
+}
+
+
+h1::after {
+    content: '✨';
+    animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
 
 /* Контейнер */
 .container {
@@ -34,16 +82,15 @@ body::before {
     text-align: center;
 }
 
-/* Заголовок */
 header.hero {
     background: linear-gradient(135deg, #FFA07A, #FFD59E);
     color: white;
     padding: 120px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden;
     border-radius: 50% 50% 0 0;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 header h1 {
@@ -61,6 +108,48 @@ header p {
     font-style: italic;
     animation: fadeInHeader 2s ease-out;
 }
+
+/* Кнопка */
+.romantic-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(135deg, #FF0000, #ffa600); /* Новогодние цвета */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.6s ease, transform 0.2s ease;
+}
+
+.romantic-btn:hover {
+    background: linear-gradient(135deg, #ffa600, #FF0000);
+    transform: scale(1.1);
+}
+
+
+/* Надпись */
+.romantic-message {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #FF6A6A;
+    display: none;
+    animation: fadeInText 1.5s ease-out;
+}
+
+/* Анимация для появления текста */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Новый контейнер для анимации сердечек */
 .heart-container {
@@ -122,39 +211,7 @@ header p {
 }
 
 
-/* Прелоадер */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #FFF7EB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#preloader .heart {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, #FF6A6A, #FF7F50);
-    position: relative;
-    animation: heartbeat 1.5s infinite;
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-}
-
+c
 /* Секретики */
 .secrets {
     padding: 60px 20px;
@@ -192,6 +249,64 @@ header p {
     animation-delay: 1.5s;
 }
 
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #FFA07A, #FFD59E);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #FFD59E, #FFA07A);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.music-toggle:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.music-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #FFD59E, #FFA07A);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.music-toggle:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Контейнер для ползунка */
+.volume-container {
+    margin-top: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+}
+
+#volume {
+    width: 150px;
+}
+
 /* Галерея */
 .gallery {
     display: flex;
@@ -199,6 +314,7 @@ header p {
     justify-content: center;
     gap: 20px;
     margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 /* Галерея */
@@ -260,6 +376,7 @@ h2 {
 h2:hover {
     color: #FF6A6A; /* Цвет при наведении */
     transform: translateY(-5px); /* Легкое поднятие текста */
+    text-shadow: 0 0 10px #FF6A6A;
 }
 
 /* Котик секция - интереснее */
@@ -294,6 +411,49 @@ h2:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     filter: brightness(1.2); /* Легкое увеличение яркости */
 }
+
+.photo-with-caption {
+    position: relative;
+    display: inline-block;
+}
+
+.photo-with-caption img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.photo-with-caption .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-with-caption:hover .caption {
+    opacity: 1;
+}
+
+h1::after {
+    content: ' ✨';
+    animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
 
 /* Дополнительная анимация для котика */
 @keyframes fadeInCat {
@@ -367,4 +527,49 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Прелоадер */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF7EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+/* Сердечко */
+#preloader .heart {
+    font-size: 100px; /* Размер сердца */
+    animation: heartbeat 1.5s ease-in-out infinite; /* Анимация пульсации */
+}
+
+/* Анимация пульсации для сердечка */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1); /* Нормальный размер */
+    }
+    15% {
+        transform: scale(1.2); /* Увеличение в 1.2 раза */
+    }
+
+    30%{
+        transform: scale(1.0);
+    }
+
+    45%{
+        transform: scale(1.2);
+    }
+
+    60%{
+        transform: scale(1.0);
+    }
+
 }

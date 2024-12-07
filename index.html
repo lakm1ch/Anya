@@ -7,14 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="preloader">
-        <div class="heart"></div>
-    </div>
+    <div class="snowflakes" id="snowflakes-container"></div>
 
+    <div id="preloader">
+        <div class="heart">❤️</div> <!-- Сердечко -->
+    </div>
+    
     <header class="hero">
         <div class="container">
             <h1>Мой Личный Уголок</h1>
             <p>Здесь звучит любимая музыка и живут самые тёплые воспоминания.</p>
+            <!-- Аудиофайл -->
+            <audio id="background-music" loop autoplay>
+                <source src="mariah-carey-all-i-want-for-christmas_muzrecord.net.mp3" type="audio/mpeg">
+            </audio>            
+    
+            <!-- Контейнер для кнопки и ползунка -->
+            <div class="music-control">
+                <button class="music-toggle">🎵 Включить музыку</button>
+                <!-- Ползунок громкости -->
+                <div class="volume-container">
+                    <label for="volume">Громкость</label>
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2">
+                </div>
+            </div>
+    
             <div class="heart-container">
                 <div class="floating-hearts">
                     <span>❤️</span>
@@ -24,11 +41,12 @@
             </div>
         </div>
     </header>
-
     
 
     <section class="gallery">
         <div class="container">
+
+            
             <h2>Моя галерея😊</h2>
             <div class="slider">
                 <div class="slide">
@@ -41,15 +59,19 @@
                     <img src="foto/3.jpg" alt="Фото 3">
                 </div>
             </div>
+            <button id="romantic-btn" class="romantic-btn">Нажми сюда 🧡</button>
+            <div id="romantic-message" class="romantic-message">Ты красивая тётя🎀</div>
         </div>
     </section>
+    
 
     <section class="cat-photo">
         <div class="container">
             <h2>Мой котик😸</h2>
-            <div class="cat-photo-container">
-                <img src="foto/cat.jpg" alt="Котик" class="cat-photo-img">
-            </div>
+            <div class="photo-with-caption">
+                <img src="foto/cat.jpg" alt="Котик">
+                <span class="caption">Мой любимый котик!</span>
+            </div>            
         </div>
     </section>
 
@@ -65,11 +87,6 @@
         <p>&copy; 2024 Мой Личный Уголок. Все права защищены.</p>
     </footer>
 
-    <script>
-        // Скрипт для прелоадера
-        window.addEventListener('load', function() {
-            document.getElementById('preloader').style.display = 'none';
-        });
-    </script>
+    <script src="JS.js" defer></script>
 </body>
 </html>

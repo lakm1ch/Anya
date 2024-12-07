@@ -82,17 +82,19 @@ h1::after {
     text-align: center;
 }
 
+/* Обновленный стиль для header */
 header.hero {
-    background: linear-gradient(135deg, #FFA07A, #FFD59E);
+    background: linear-gradient(135deg, #FFA07A, #FFD59E); /* Плавный градиент */
     color: white;
-    padding: 120px 20px;
+    padding: 100px 20px; /* Уменьшено расстояние сверху для улучшения пропорций */
     text-align: center;
     position: relative;
-    border-radius: 50% 50% 0 0;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Тень для мягкости */
     overflow: hidden;
+    z-index: 1;
 }
 
+/* Заголовок */
 header h1 {
     font-size: 3.5rem;
     margin: 0;
@@ -102,12 +104,14 @@ header h1 {
     animation: fadeInHeader 1.5s ease-out;
 }
 
+/* Описание под заголовком */
 header p {
     font-size: 1.3rem;
     margin-top: 10px;
     font-style: italic;
     animation: fadeInHeader 2s ease-out;
 }
+
 
 /* Кнопка */
 .romantic-btn {
